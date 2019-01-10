@@ -17,7 +17,10 @@ class Eloquent extends CI_Controller
         $id = (int)$id;
         
         $result = Test::find($id);
+        $test = new Test();
+        $test->friendlyName = 'Jarek';
+        $test->save();
         
-        echo $result->name;
+        echo $result->friendlyName;
     }
 }
